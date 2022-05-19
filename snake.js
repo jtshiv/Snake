@@ -17,8 +17,8 @@ export function update(){
     }
     // handle the head
     // hardcoded direction
-    snakeBody[0].x += 1;
-    snakeBody[0].y += 0;
+    snakeBody[0].x += 0;
+    snakeBody[0].y += 1;
 }
 export function draw(gameBoard){
     snakeBody.forEach(segment => {

@@ -23,5 +23,6 @@ function update(){
 }
 
 function draw() {
+    gameBoard.innerHTML = ""; // clear old snake bodies
     drawSnake(gameBoard);
 }
