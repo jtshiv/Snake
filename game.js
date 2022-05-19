@@ -1,5 +1,6 @@
 import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from './snake.js'
 let lastRenderTime = 0;
+const gameBoard = document.getElementById("game-board");
 
 // This is the game loop that requests a render
 // from the browser then executes the other functions
@@ -9,7 +10,6 @@ function main(currentTime){
     if (secondsSinceLastRender < 1 / SNAKE_SPEED) return;
 
     lastRenderTime = currentTime;
-    console.log("render")
 
     update(); // process all the logic
     draw(); // after logic, where is snake and actually draw
@@ -23,5 +23,5 @@ function update(){
 }
 
 function draw() {
-    drawSnake();
+    drawSnake(gameBoard);
 }
