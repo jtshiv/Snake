@@ -1,4 +1,6 @@
-import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from './snake.js'
+import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from './snake.js';
+import {update as updateFood, draw as drawFood} from './food.js';
+
 let lastRenderTime = 0;
 const gameBoard = document.getElementById("game-board");
 
@@ -20,9 +22,11 @@ window.requestAnimationFrame(main) // request the first time
 
 function update(){
     updateSnake();
+    updateFood();
 }
 
 function draw() {
     gameBoard.innerHTML = ""; // clear old snake bodies
     drawSnake(gameBoard);
+    drawFood(gameBoard);
 }
