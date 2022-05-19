@@ -35,9 +35,14 @@ export function expandSnake(amount){
     newSegments += amount;
 }
 
-export function onSnake(position){
+export function onSnake(position,{ignoreHead = false} = {}){
+    // ignore head will be false by default and if nothing is passed, it's an empty obj
+
     // loop through each segment of the snake to see if it's on the position
-    return snakeBody.some(segment => {
+    return snakeBody.some((segment,index) => {
+        // this is the case to ignore head
+        if (ignoreHead && index ===0) return false;
+
         return equalPositions(segment,position);
     })
 }
@@ -53,4 +58,14 @@ function addSegments(){
         snakeBody[snakeBody.length] = {...snakeBody[snakeBody.length-1]}
     }
     newSegments = 0;
+}
+
+export function getSnakeHead(){
+    return snakeBody[0];
+}
+
+export function snakeIntersection(){
+    // add option to onSnake function to ignore head otherwise it
+    // would always be true
+    return onSnake(snakeBody[0], {ignoreHead:true})
 }
