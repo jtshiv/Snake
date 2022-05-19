@@ -1,4 +1,4 @@
-import { SNAKE_SPEED } from './snake.js'
+import { update as updateSnake, draw as drawSnake, SNAKE_SPEED } from './snake.js'
 let lastRenderTime = 0;
 
 // This is the game loop that requests a render
@@ -19,8 +19,9 @@ window.requestAnimationFrame(main) // request the first time
 
 
 function update(){
-
+    updateSnake();
 }
- function draw() {
 
- }
+function draw() {
+    drawSnake();
+}
