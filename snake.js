@@ -7,6 +7,7 @@ const snakeBody = [
 let newSegments = 0; // don't start with segments
 
 export function update(){
+    addSegments();
     const inputDirection = getInputDirection();
     // start with second to last segment bc the last segment
     // will disappear
@@ -43,4 +44,13 @@ export function onSnake(position){
 
 function equalPositions(pos1,pos2){
     return pos1.x === pos2.x && pos1.y===pos2.y;
+}
+
+function addSegments(){
+    // called on every update. adds new segments from expandSnake
+    for (let i = 0;i<newSegments;i++){
+        // duplicate it to the end. same as a push function
+        snakeBody[snakeBody.length] = {...snakeBody[snakeBody.length-1]}
+    }
+    newSegments = 0;
 }
