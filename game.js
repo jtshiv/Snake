@@ -1,6 +1,5 @@
-
+import { SNAKE_SPEED } from './snake.js'
 let lastRenderTime = 0;
-const SNAKE_SPEED = 2; // 2 times per second
 
 // This is the game loop that requests a render
 // from the browser then executes the other functions
@@ -12,8 +11,16 @@ function main(currentTime){
     lastRenderTime = currentTime;
     console.log("render")
 
-    // update();
-    // draw();
+    update(); // process all the logic
+    draw(); // after logic, where is snake and actually draw
 }
 
 window.requestAnimationFrame(main) // request the first time
+
+
+function update(){
+
+}
+ function draw() {
+
+ }
