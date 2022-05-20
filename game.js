@@ -10,7 +10,10 @@ const gameBoard = document.getElementById("game-board");
 // from the browser then executes the other functions
 function main(currentTime){
     if (gameOver){
-        return alert('you lose');
+        if (confirm('You los. Press ok to restart.')){
+            window.location = '/';
+        }
+        return;
     }
     window.requestAnimationFrame(main) // request the frame and wait then calls the main func
     const secondsSinceLastRender = (currentTime - lastRenderTime) / 1000
