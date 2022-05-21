@@ -58,6 +58,7 @@ window.addEventListener('touchend', e => {
 })
 window.addEventListener('touchmove',e=>{
 	e.preventDefault();
+	e.stopImmediatePropagation();
 })
 	
 
