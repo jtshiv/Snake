@@ -56,6 +56,9 @@ window.addEventListener('touchend', e => {
 	touchEnd.y = e.changedTouches[0].screenY;
 	handleTouch();
 })
+window.addEventListener('touchmove',e=>{
+	e.preventDefault();
+})
 	
 
 export function getInputDirection(){
