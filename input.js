@@ -46,10 +46,12 @@ function handleTouch(){
 }
 
 window.addEventListener('touchstart', e => {
+	e.preventDefault();
 	touchStart.x = e.changedTouches[0].screenX;
 	touchStart.y = e.changedTouches[0].screenY;
 });
 window.addEventListener('touchend', e => {
+	e.preventDefault();
 	touchEnd.x = e.changedTouches[0].screenX;
 	touchEnd.y = e.changedTouches[0].screenY;
 	handleTouch();
